@@ -3,10 +3,9 @@
 import os 
 from typing import Final
 from telegram import Update
-from telegram.ext import Application, CommandHandler,MessageHandler,filters,ContextTypes,Updater
-from dotenv import load_dotenv, dotenv_values
-load_dotenv()
-Token:Final=os.getenv("Token")
+from telegram.ext import Application, CommandHandler,MessageHandler,filters,ContextTypes
+from decouple import config
+Token:Final=config("Token")
 BOT_USERNAME: Final ="@metsihafe_gitsaweBot"
 
 async def start_command(update: Update,context:ContextTypes.DEFAULT_TYPE):
